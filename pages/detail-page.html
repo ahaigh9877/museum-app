@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-        <main>
-            <section id="content">
-                <p>Alastair's Mobile Museum App</p>
-                <h1>Snow Storm - Steam-Boat off a Harbour’s Mouth - JMW Turner 1842</h1>
-                <img width=600 src="https://artsy-media-uploads.s3.amazonaws.com/LqSBkvZpSD7RwdjK-5OiYQ%2Fcustom-Custom_Size___j-m-w-turner-snow-storm-steam-boat-off-a-harbour-s-mouth-1842.jpg" alt="Snowstorm by Turner">
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="./detail.css">
+</head>
+
+<body>
+    <main>
+        <section id="content">
+            <p>Alastair's Mobile Museum App: Detail page</p>
+            <h1 class="gradient-text">Snow Storm<br>Steam-Boat off a Harbour’s Mouth<br>JMW Turner 1842</h1>
+            <img 
+                src="https://artsy-media-uploads.s3.amazonaws.com/LqSBkvZpSD7RwdjK-5OiYQ%2Fcustom-Custom_Size___j-m-w-turner-snow-storm-steam-boat-off-a-harbour-s-mouth-1842.jpg"
+                alt="Snowstorm by Turner">
+        </section>
+        <section id="comments">
+            <h2>Comments</h2>
+            <section class="comment">
+                <h3>Nobody said:</h3>
+                <p class="handwriting">"This is definitely one of my least favourites."</p>
             </section>
-            <section id="comments">
-                <h2>Comments</h2>
-                <section class="comment">
-                    <h3>Arien said:</h3>
-                    <p>This is definitely one of my least favourites.</p>
-                </section>
-            </section>
-            <form onsubmit="submitComment(); return false">
-                <div class="formSection">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name">
-                </div>
-                <div class="formSection">
-                    <label for="msg">Message:</label>
-                    <textarea id="message"></textarea>
-                </div>
-                <div class="button">
-                    <button type="default">Post your comment</button>
-                </div>
-            </form>
-        </main>
-    </body>
-    <footer>
-        <p>Made with ❤ at Codaisseur</p>
-    </footer>
+        </section>
+        <form onsubmit="submitComment(); return false">
+            <div class="formSection">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div class="formSection">
+                <label for="msg">Message:</label>
+                <textarea id="message"></textarea>
+            </div>
+            <div class="button">
+                <button type="default">Post your comment</button>
+            </div>
+        </form>
+    </main>
+</body>
+<footer>
+    <p>Made with ❤ at Codaisseur</p>
+</footer>
+
 </html>

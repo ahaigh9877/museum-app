@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+html{
+    font-size: 20px;
+}
+
+body{
+    margin: 0;
+    padding: 2rem 0;
+    width: 100%;
+    background: linear-gradient(#006400,#008000);
+    font-family: Bitter, serif;
+    text-align: center;
+    font-size: 100%;
+}
+
+main {
+    background: linear-gradient(#dcd5de,#b9acbf);
+    width: 90%;
+    margin: auto;
+    border-radius: 2rem;
+    padding: 2rem 0;
+    box-shadow: 5px 5px 15px 5px #005000;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  h1{
+    font-size: 2rem;
+  }
+
+  .gradient-text {
+    background: -webkit-linear-gradient(#000000,#333333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h2{
+    font-size: 2rem;
+    margin: 3rem auto 2rem auto;
+    background: white;
+    padding: 0.2rem 1rem;
+    box-shadow: 0px 0px 15px 15px white;
+    border-radius: 2rem;
+    width: fit-content;
+    transition: 0.2s;
+  }
+
+  h2:hover{
+    box-shadow: 0px 0px 35px 35px white;
+    transition: 0.2s;
+  }
+
+  .handwriting{
+    font-family: Pacifico, monospace;
+  }
+
+  img{
+    width: 30rem;
+    border:20px ridge #d6922a;
+    box-shadow: 3px 3px 5px 3px grey;
+    transition: 0.1s;
+  }
+
+  img:hover{
+    transform: rotate(6deg);
+    transition: 0.4s ease;
+  }
+
+  .comment {
+    margin: 3rem auto;
+    width: 50%;
+    padding: 0.5rem 0.4rem 0.8rem 0.4rem;
+    background-color: rgba(255,255,255,0.7);
+    border: 0.3rem solid grey;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  form{
+    margin: 3rem auto;
+    width: 50%;
+    min-width: 15rem;
+    padding: 0.8rem 1.5rem 1.5rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 0.3rem solid grey;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .formSection {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  label {
+      display: inline-block;
+      width: 80%;
+      margin-bottom: 0.2rem;
+  }
+
+  input {
+      width: 80%;
+      font-size: 1rem;
+      padding: 0.5rem;
+      box-sizing: border-box;
+  }
+
+  textarea {
+      width: 80%;
+      height: 5rem;
+      box-sizing: border-box;
+  }
