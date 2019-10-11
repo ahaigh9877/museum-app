@@ -326,72 +326,99 @@ const data = {
 
 const paintings = data.artObjects;
 
-// paintings.forEach(element => {
-//     console.log(element);
-// });
-
-// const titles = [];
-// const paintingSrcs = [];
-
 function displayPainting() {
 
     // get gallery element
     const gallery = document.getElementById("gallery");
-    // console.log(gallery);
 
-    paintings.forEach(element => {
-        
-
-        // create anchor and img tags for each painting
-        const a = document.createElement("a");
-        const img = document.createElement("img");
-        
-        // add the link to the a tag
-        a.href = "./pages/detail-page.html"
-
-        // get the painting's url
-        img.src = element.webImage.url;
-        // add the class "artObject" to each image
-        img.classList.add("artObject");
-        // add the painting's title to the images' alt attribute.
-        img.alt = element.title;
-
-        // Insert the img tag inside the a tag and add the a tag to the gallery section.
-        a.appendChild(img);
-        gallery.appendChild(a);
-    });
-    
-    // fill titles array and src array
-    // for (let i = 0; i < paintings.length; i++) {
-    //     //titles.push(paintings[i].title);
-    //     //console.log(paintings[i].title);
-    //     //console.log(titles);
-    //     //console.log(paintings[i].webImage.url);
-    //     //paintingSrcs.push(paintings[i].webImage.url);
-    //     //console.log(paintingSrcs);
-
-    //     // create elements
+    // paintings.forEach(element => {
+    //     // create anchor and img tags for each painting
     //     const a = document.createElement("a");
     //     const img = document.createElement("img");
         
-
-    //     //put stuff in elements
+    //     // add the link to the a tag
     //     a.href = "./pages/detail-page.html"
-    //     // img.src = paintingSrcs[i];
-    //     img.src = paintings[i].webImage.url;
+
+    //     // get the painting's url
+    //     img.src = element.webImage.url;
+    //     // add the class "artObject" to each image
     //     img.classList.add("artObject");
-    //     // img.alt = titles[i];
-    //     img.alt = paintings[i].title;
+    //     // add the painting's title to the images' alt attribute.
+    //     img.alt = element.title;
 
+    //     // Insert the img tag inside the a tag and add the a tag to the gallery section.
     //     a.appendChild(img);
-
     //     gallery.appendChild(a);
-        
-    //     // console.log(gallery);
-    //     // console.log(a);
-    //     // console.log(img);
-    // }
+    // });
+    
+    // run through the paintings array gathering data for each.
+    for (let i = 0; i < paintings.length; i++) {
+        // extract the date from the long title
+        const longTitle = paintings[i].longTitle
+        const date = longTitle.slice(longTitle.length-4);
+        console.log(date);
 
+        // get the artist
+        const artist = paintings[i].principalOrFirstMaker
+        console.log(artist);
+
+        // if(
+        //     paintings[i].width < 1500 ||
+        //     artist === 'Gerard van Honthorst' ||
+        //     date > 1800
+        //     ){
+        //     continue;
+        // }
+
+        // create figure, anchor and img tags for each painting
+        const figure = document.createElement("figure");
+        const a = document.createElement("a");
+        const img = document.createElement("img");
+
+        // lose figure margin
+        figure.style.margin = "0";
+
+        // create a caption
+        const caption = document.createElement("figcaption");
+        
+        // add the link to the a tag
+        a.href = "./pages/detail-page.html";
+
+        // get the image url and add it
+        img.src = paintings[i].webImage.url;
+
+        // add "artObject" as class to each image
+        img.classList.add("artObject");
+
+        // get the title and set it as the image alt
+        let title = paintings[i].title;
+        img.alt = title;
+
+        // some paintings have a shorter "known as" title. Remove everything before "bekend als " gives just the short title.
+        if(title.includes("bekend als")){
+            title = title.replace(/.*bekend als /,"");
+        }
+
+        // set the caption as title + date
+        caption.innerText = `${artist}, ${title}, ${date}`;
+        console.log(caption);
+
+        caption.style.fontSize = "1.2rem";
+        caption.style.width = "15rem";
+        caption.style.margin = "auto";
+        caption.style.bottom = "10rem";
+
+        // a.appendChild(img);
+        // gallery.appendChild(a);
+        
+        figure.appendChild(a);
+        a.appendChild(img);
+        figure.appendChild(caption);
+
+        gallery.appendChild(figure);
+
+
+    }
 }
 
 displayPainting();
