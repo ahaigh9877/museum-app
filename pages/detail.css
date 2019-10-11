@@ -30,18 +30,11 @@ h1 {
     font-size: x-large;
 }
 
-.gradient-text {
-    background: -webkit-linear-gradient(#000000,#333333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 .comments {
     text-align: center;
 }
 
 h2 {
-
     margin: 3rem auto 2rem auto;
     background: white;
     padding: 0.2rem 1rem;
