@@ -41,3 +41,14 @@ h2 {
     justify-content: center;
     align-items: flex-start;
 }
+
+img {
+    border:0.6rem ridge #d6922a;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.2rem grey;
+    transition: 0.1s;
+}
+
+img:hover{
+    transform: rotate(6deg);
+    transition: 0.4s ease;
+}
