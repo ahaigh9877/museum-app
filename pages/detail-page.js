@@ -2,9 +2,17 @@
 function submitComment() {
     // gather data: name and message
     const inputField = document.getElementById("name");
-    const name = inputField.value;
+    let name = inputField.value;
     const textArea = document.getElementById("msg");
     const msg = textArea.value;
+
+    if (doesNotPassAllValidations(name, msg)){
+        return null;
+    }
+
+    name = name[0].toUpperCase() + name.slice(1);
+
+    console.log(name);
 
     // create necessary elements: a section, an h3 heading and a paragraph.
     const comment = document.createElement("section");
@@ -30,4 +38,15 @@ function submitComment() {
     // empty the form after comment submission
     inputField.value = null;
     textArea.value = null;
+}
+
+function doesNotPassAllValidations (name, msg) {
+    if (!name || !msg){
+        alert('You forgot to fill in your name or message or both.')
+        return true;
+    } if (msg.length > 250){
+        alert('Message too long yo')
+        return true;
+    } 
+    return false;   
 }
